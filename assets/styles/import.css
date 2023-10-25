@@ -1,0 +1,21 @@
+/*BASE*/
+@import url('./_reset.css');
+@import url('./_typography.css');
+@import url('/assets/fonts/montserrat/_stylesheet.css');
+@import url('/assets/fonts/material_icons/_material_icons.css');
+
+/*FRAMEWORKS*/
+@import url('/assets/frameworks/bootstrap-5.2.3/css/bootstrap.min.css');
+
+/*HTML*/
+/* @import url('/src/components/HTML/aside/aside.css');
+@import url('/src/components/HTML/buttons/buttons.css');
+@import url('/src/components/HTML/dialogs/dialogs.css');
+@import url('/src/components/HTML/forms/forms.css');
+@import url('/src/components/HTML/lists/lists.css');
+@import url('/src/components/HTML/tables/tables.css'); */
+
+/*COMPONENTS*/
+
+/*PAGES*/
+
