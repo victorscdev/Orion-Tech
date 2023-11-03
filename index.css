@@ -1,13 +1,8 @@
-body {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-}
 main {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     padding: 24px;
-    height: 100vh;
+    height: calc(100vh - 88px);
     width: 100%;
 }

@@ -1,0 +1,28 @@
+button {
+    cursor: pointer;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 16px 32px;
+}
+
+.btn_register {
+    background: #14688B;
+    color: #ffffff;
+}
+
+.btn_register:hover {
+    background: transparent;
+    border: 1px solid #14688B;
+    color: #14688B;
+}
+
+.btn_save {
+    background: #14688B;
+    color: #ffffff;
+}
+
+.btn_save:hover {
+    background: transparent;
+    border: 1px solid #14688B;
+    color: #14688B;
+}

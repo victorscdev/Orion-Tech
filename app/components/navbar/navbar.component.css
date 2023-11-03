@@ -1,0 +1,18 @@
+nav.bg-azul {
+    background-color: #14688B;
+    padding: 24px;
+}
+
+nav .navbar-nav .nav-item .nav-link {
+    color: #fff;
+}
+
+nav .navbar-nav .nav-item .nav-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+nav .navbar-nav .nav-item .nav-link.active {
+    color: #30ABE4;
+    text-decoration: underline;
+}

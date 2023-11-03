@@ -1,0 +1,19 @@
+.FORM__group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+}
+
+.FORM__group .FORM__control {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 8px);
+}
+
+.FORM__group .FORM__control input {
+    border: 1px solid #14688B;
+    border-radius: 4px;
+}

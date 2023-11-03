@@ -1,0 +1,28 @@
+dialog {
+    border: none;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 8px;
+    min-width: 400px;
+}
+
+dialog .HEADER__dialog,
+dialog .BODY__dialog,
+dialog .FOOTER__dialog {
+    padding: 8px 16px;
+}
+
+dialog .FOOTER__dialog {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+dialog .FOOTER__dialog button {
+    margin-right: 16px;
+}
+
+dialog .FOOTER__dialog button:last-of-type {
+    margin-right: 0;
+}

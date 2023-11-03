@@ -1,7 +1,7 @@
 /*BASE*/
+@import url('/assets/fonts/montserrat/_stylesheet.css');
 @import url('./_reset.css');
 @import url('./_typography.css');
-@import url('/assets/fonts/montserrat/_stylesheet.css');
 @import url('/assets/fonts/material_icons/_material_icons.css');
 
 /*FRAMEWORKS*/
@@ -9,13 +9,15 @@
 
 /*HTML*/
 /* @import url('/src/components/HTML/aside/aside.css');
-@import url('/src/components/HTML/buttons/buttons.css');
-@import url('/src/components/HTML/dialogs/dialogs.css');
-@import url('/src/components/HTML/forms/forms.css');
-@import url('/src/components/HTML/lists/lists.css');
-@import url('/src/components/HTML/tables/tables.css'); */
+@import url('/src/components/HTML/lists/lists.css'); */
+@import url('/app/components/buttons/buttons.css');
+@import url('/app/components/dialogs/dialogs.css');
+@import url('/app/components/forms/forms.css');
+@import url('/app/components/tables/tables.css');
+@import url('/app/components/select/select.component.css');
 
 /*COMPONENTS*/
+@import url('/app/components/navbar/navbar.component.css');
 
 /*PAGES*/
 
