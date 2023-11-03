@@ -1,0 +1,16 @@
+{
+    "name": "Orion Tech Desk",
+    "short_name": "OTD",
+    "description": "Orion Tech Desktop PWA",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#dddddd",
+    "theme_color": "#14688B",
+    "icons": [
+        {
+            "src": "./assets/icons/android/android-launchericon-192-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

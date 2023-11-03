@@ -12,18 +12,22 @@ import {
 
 export const array_header = [
     {
+        id: "home",
         title: 'Home',
         handler: LER__home
     },
     {
+        id: "funcionarios",
         title: 'Funcionarios',
         handler: LER__funcionarios
     },
     {
+        id: "apontamento_horas",
         title: "Apontamento de Horas",
         handler: LER__apontamento_horas
     },
     {
+        id: "demonstrativo_ferias",
         title: "Demonstrativo de Ferias",
         handler: LER__demonstratvo_de_ferias
     },

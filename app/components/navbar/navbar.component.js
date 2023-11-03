@@ -19,8 +19,8 @@ function CRIAR__navbar(array) {
     const ul = document.createElement("ul");
     ul.classList.add("navbar-nav");
 
-    array.forEach(element => {
-        ul.appendChild(CRIAR__nav_item(element));
+    array.forEach(({id, title, handler}) => {
+        ul.appendChild(CRIAR__nav_item(id, title, handler));
     });
 
     collapseDiv.appendChild(ul);
@@ -37,18 +37,19 @@ export function LER__navbar(array) {
     nav.append(CRIAR__navbar(array))
 }
 
-function CRIAR__nav_item(element) {
+function CRIAR__nav_item(id, title, handler) {
     const li = document.createElement("li");
     li.classList.add("nav-item")
 
-    li.append(CRIAR__nav_link(element.title, element.handler))
+    li.append(CRIAR__nav_link(id, title, handler))
 
     return li
 }
 
-function CRIAR__nav_link(title, handler) {
+function CRIAR__nav_link(id, title, handler) {
     const anchor = document.createElement("a");
     anchor.classList.add("nav-link");
+    anchor.id = id
     anchor.innerText = title
     anchor.addEventListener("click", handler)
 
