@@ -11,7 +11,7 @@ if (window.location.href.includes("orion-tech-desk")) {
         if (link.id === "apontamento_horas") link.remove()
         if (link.id === "demonstrativo_ferias") link.remove()
     })
-} else {
+} else if(window.location.href.includes("orion-tech-web")) {
     nav_links.forEach((link) => {
         if (link.id === "funcionarios") link.remove()
     })
