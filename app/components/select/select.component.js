@@ -1,7 +1,7 @@
-export function CRIAR__select_df(array) {
+export function CRIAR__select_funcionarios(array) {
     const select = document.createElement("select")
     select.classList.add("form-select")
-    select.id = "demonstrativo_ferias"
+    select.id = "select_funcionarios"
     select.setAttribute("aria-label", "select demonstrativo de ferias")
 
     array.forEach(({nome, id_funcionario}) => {

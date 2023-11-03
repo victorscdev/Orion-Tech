@@ -83,3 +83,34 @@ export function CRIAR__tabela_demonstrativo_de_ferias(array) {
 
     return table
 }
+
+export function CRIAR__tabela_apontamento_horas(array) {
+    const table = document.createElement('table')
+    table.classList.add("table", "table-striped", "table-hover")
+    table.id = "table_apontamento"
+
+    table.innerHTML = `
+        <thead>
+            <tr class="table-dark">
+                <th>Data</th>
+                <th>Entrada</th>
+                <th>Saida</th>
+                <th>intervalo</th>
+                <th>Horas Trabalhadas</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${array.map((apontamento) => `
+            <tr class="table-secondary">
+                <td>${apontamento.data_dia}</td>
+                <td>${apontamento.hora_entrada}</td>
+                <td>${apontamento.hora_saida}</td>
+                <td>${apontamento.intervalo}</td>
+                <td>${apontamento.horas_trabalhadas}</td>
+            </tr>  
+            `).join('')}
+        </tbody>
+        `;
+
+    return table
+}

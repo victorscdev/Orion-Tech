@@ -2,7 +2,8 @@
 import { 
     LER__funcionarios,
     LER__home,
-    LER__demonstratvo_de_ferias
+    LER__demonstratvo_de_ferias,
+    LER__apontamento_horas
  } from "./handlers.js"
 
 // import { Handlers } from "./handlers.js"
@@ -19,54 +20,13 @@ export const array_header = [
         handler: LER__funcionarios
     },
     {
+        title: "Apontamento de Horas",
+        handler: LER__apontamento_horas
+    },
+    {
         title: "Demonstrativo de Ferias",
         handler: LER__demonstratvo_de_ferias
     },
-    // {
-    //     title: 'Apontamento de Horas',
-    //     // handler: _handlers.get_apontamento_horas
-    // }
-    // {
-    //     name: 'pagamentos',
-    //     title: 'Pagamentos',
-    //     handler: _handlers.get_payments
-    // },
-    // {
-    //     name: 'deducoes',
-    //     title: 'Deduções',
-    //     handler: _handlers.get_deductions
-    // },
-    // {
-    //     name: 'beneficios',
-    //     title: 'Beneficios',
-    //     handler: _handlers.get_benefits
-    // },
-    // {
-    //     name: 'folha_ponto',
-    //     title: 'Folha de Pagamento',
-    //     handler: _handlers.get_time_sheet
-    // },
-]
-
-export const array_employees = [
-    {
-        name: '',
-        office: '',
-        departament: '',
-        wage: 0,
-        benefits: '',
-        deductions: 0,
-        net_salary: 0,
-    },
-    {
-        name: 'Victor Santana Costa',
-        office: 'Software engineer',
-        departament: 'Payments',
-        wage: 10000,
-        benefits: 'VR, VT',
-        deductions: 2000,
-        net_salary: 8000,
-    }
 ]
 
 export const array_form_employees = [

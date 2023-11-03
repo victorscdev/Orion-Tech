@@ -17,3 +17,13 @@ export function HTML__botao_gerar_demonstrativo_ferias_por_funcionario(event) {
 
     return btn__gerar_demonstrativo
 }
+
+export function HTML__botao_gerar_apontamento_horas(event) {
+    const btn__gerar_apontamento = document.createElement('button')
+    btn__gerar_apontamento.classList.add('btn_gerar_apontamento')
+    btn__gerar_apontamento.addEventListener('click', event)
+
+    btn__gerar_apontamento.innerText = 'Gerar Apontamento';
+
+    return btn__gerar_apontamento
+}
