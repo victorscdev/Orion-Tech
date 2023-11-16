@@ -1,9 +1,9 @@
 import { db_read__by_id_response, db_read_by_id } from "../services/employees.service.js"
 
-export let folha_de_pagamento = []
+export let demontrativo_de_pagamento = [] 
 
-export async function FILTRAR__apontamentos_por_data_e_horas_trabalhadas(array, data, employeeID) {
-    folha_de_pagamento = []
+export async function FILTRAR__demontrativo_por_data_e_horas_trabalhadas(array, data, employeeID) {
+    demontrativo_de_pagamento = []
     let count = 0
     array.forEach((element) => {
         if (CRIAR__data_com_mes_e_ano(element.data_dia) === data) {
@@ -15,36 +15,31 @@ export async function FILTRAR__apontamentos_por_data_e_horas_trabalhadas(array, 
 
     if (count !== 0) {
         await db_read_by_id(employeeID)
-        folha_de_pagamento.push(GERAR__calculo_de_folha(db_read__by_id_response.vlr_hora, count))
+        console.log(db_read__by_id_response);
+        demontrativo_de_pagamento.push(GERAR__demonstrativo(db_read__by_id_response.vlr_hora, count))
     }
 }
 
-function GERAR__calculo_de_folha(vlr_hora, qtds_vezes_trabalhadas) {
+function GERAR__demonstrativo(vlr_hora, qtds_vezes_trabalhadas) {
     const valor_hora = Number(vlr_hora)
     const quantidade_horas = 8 * qtds_vezes_trabalhadas;
     const salario_bruto = valor_hora * quantidade_horas;
     const desconto_inss = GERAR__desconto_inss(salario_bruto)
+    const desconto_inss_porcentagem = GERAR__desconto_inss_porcentagem(salario_bruto)
     const desconto_ir = GERAR__desconto_ir(salario_bruto, desconto_inss)
+    const desconto_ir_porcentagem = GERAR__desconto_ir_porcentagem(salario_bruto, desconto_inss)
     const salario_liquido = GERAR__salario_liquido(salario_bruto, desconto_inss, desconto_ir)
 
     return {
-        valor_hora: valor_hora,
-        quantidade_horas: quantidade_horas,
+        dias_trabalhadas : qtds_vezes_trabalhadas,
         salario_bruto: salario_bruto,
         desconto_inss: desconto_inss,
+        desconto_inss_porcentagem: desconto_inss_porcentagem,
         desconto_ir: desconto_ir,
+        desconto_ir_porcentagem: desconto_ir_porcentagem,
         salario_liquido: salario_liquido,
     }
 }
-
-// function GERAR__desconto_inss(salario) {
-//     if (salario <= 1302) return salario * (7.5 / 100)
-//     else if (salario >= 1302.01 && salario <= 2571.29) return salario * (9 / 100)
-//     else if (salario >= 2571.30 && salario <= 3856.94) return salario * (12 / 100)
-//     else if (salario >= 3856.95 && salario <= 7507.49) return salario * (14 / 100)
-//     else return 876.93
-
-// }
 
 function GERAR__desconto_inss(salario) {
     const faixasINSS = [
@@ -73,6 +68,15 @@ function GERAR__desconto_inss(salario) {
     return inss;
   }
 
+function GERAR__desconto_inss_porcentagem(salario) {
+    if (salario <= 1302) return "7.5%"
+    else if (salario >= 1302.01 && salario <= 2571.29) "9%"
+    else if (salario >= 2571.30 && salario <= 3856.94) "12%"
+    else if (salario >= 3856.95 && salario <= 7507.49) "14%"
+    else return "14%"
+
+}
+
 function GERAR__desconto_ir(salario, inss) {
     const salario_descontado = (salario - inss);
 
@@ -83,6 +87,15 @@ function GERAR__desconto_ir(salario, inss) {
     else return salario_descontado * (27.5 / 100)
 }
 
+function GERAR__desconto_ir_porcentagem(salario, inss) {
+    const salario_descontado = (salario - inss);
+
+    if (salario_descontado <= 2112) return "Isento"
+    else if (salario_descontado >= 2112.01 && salario_descontado <= 2826.65) return "7.5%"
+    else if (salario_descontado >= 2826.66 && salario_descontado <= 3751.05) return "15%"
+    else if (salario_descontado >= 3751.06 && salario_descontado <= 4664.68) return "22.5%"
+    else return "27.5%"
+}
 
 function GERAR__salario_liquido(salario_bruto, desconto_inss, desconto_ir) {
     return salario_bruto - (desconto_inss + desconto_ir)

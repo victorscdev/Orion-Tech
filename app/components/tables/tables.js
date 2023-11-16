@@ -147,3 +147,60 @@ export function CRIAR__tabela_calculo_de_folha(array) {
 
     return table
 }
+
+export function CRIAR__tabela_demontrativo_de_pagamento(array) {
+    const table = document.createElement('table')
+    table.classList.add("table", "table-striped", "table-hover")
+    table.id = "table_demontrativo_de_pagamento"
+
+    table.innerHTML = `
+        <thead>
+            <tr class="table-dark">
+                <th>Descrição</th>
+                <th>Referencia</th>
+                <th>Vencimentos</th>
+                <th>Descontos</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${array.map((demonstrativo) => `
+                <tr class="table-secondary">
+                    <td>Salario(Bruto)</td>
+                    <td>${demonstrativo.dias_trabalhadas}d</td>
+                    <td>${FORMATAR__numero_em_dinheiro(demonstrativo.salario_bruto)}</td>
+                    <td></td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>INSS</td>
+                    <td>${demonstrativo.desconto_inss_porcentagem}</td>
+                    <td></td>
+                    <td>${FORMATAR__numero_em_dinheiro(demonstrativo.desconto_inss)}</td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>IRFF</td>
+                    <td>${demonstrativo.desconto_ir_porcentagem}</td>
+                    <td></td>
+                    <td>${FORMATAR__numero_em_dinheiro(demonstrativo.desconto_ir)}</td>
+                </tr>
+            `).join('')}
+        </tbody>
+        <tfooter>
+            ${array.map((demonstrativo) => `
+            <tr class="table-dark">
+                <th></th>
+                <th>Total de Vencimentos</th>
+                <th>Total de Descontos</th>
+                <th>Valor Liquido</th>
+            </tr>
+            <tr class="table-warning">
+                <td></td>
+                <td>${FORMATAR__numero_em_dinheiro(demonstrativo.salario_bruto)}</td>
+                <td>${FORMATAR__numero_em_dinheiro(demonstrativo.desconto_inss + demonstrativo.desconto_ir)}</td>
+                <td>${FORMATAR__numero_em_dinheiro(demonstrativo.salario_liquido)}</td>
+            </tr>
+            `).join('')}
+        </tfooter>
+        `;
+
+    return table
+}

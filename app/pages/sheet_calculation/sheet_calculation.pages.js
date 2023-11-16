@@ -4,7 +4,6 @@ import { ORDENAR__arrayd_de_objetos_por_nome } from "../../model/global_function
 import { db_read, db_read_response } from "../../../services/employees.service.js"
 import { db_read_timekeeping, db_read_response_timekeeping } from "../../../services/timekeeping.service.js"
 import { FILTRAR__apontamentos_por_data_e_horas_trabalhadas, folha_de_pagamento } from "../../../business/sheet_calculation.business.js"
-import { db_read_response_sheet_calculation, db_read_sheet_calculation } from "../../../services/sheet_calculation.service.js"
 import { CRIAR__tabela_calculo_de_folha } from "../../components/tables/tables.js"
 
 export async function HTML__adiciona_info_de_calculo_de_folha() {

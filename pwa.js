@@ -14,5 +14,7 @@ if (window.location.href.includes("orion-tech-desk")) {
 } else if(window.location.href.includes("orion-tech-web")) {
     nav_links.forEach((link) => {
         if (link.id === "funcionarios") link.remove()
+        if (link.id === "calculo_de_folha") link.remove()
+        if (link.id === "demonstrativo_de_pagamento") link.remove()
     })
 }

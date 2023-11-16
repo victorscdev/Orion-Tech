@@ -33,7 +33,17 @@ export function HTML__botao_gerar_calculo_de_folha(event) {
     btn__gerar_calculo_de_folha.classList.add('btn_gerar_calculo_de_folha')
     btn__gerar_calculo_de_folha.addEventListener('click', event)
 
-    btn__gerar_calculo_de_folha.innerText = 'Gerar Calculo de Folha';
+    btn__gerar_calculo_de_folha.innerText = 'Gerar Calculo';
 
     return btn__gerar_calculo_de_folha
+}
+
+export function HTML__botao_gerar_demonstrativo_de_pagamento(event) {
+    const btn__gerar_demonstrativo_de_pagamento = document.createElement('button')
+    btn__gerar_demonstrativo_de_pagamento.classList.add('btn_gerar_demonstrativo_de_pagamento')
+    btn__gerar_demonstrativo_de_pagamento.addEventListener('click', event)
+
+    btn__gerar_demonstrativo_de_pagamento.innerText = 'Gerar Demonstrativo';
+
+    return btn__gerar_demonstrativo_de_pagamento
 }
