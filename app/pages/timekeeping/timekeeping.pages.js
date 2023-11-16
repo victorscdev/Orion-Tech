@@ -29,7 +29,7 @@ async function EVENTO__gerar_apontamento() {
         main.append(CRIAR__tabela_apontamento_horas(db_read_response_timekeeping))
     } else {
         table.remove()
-        await db_read_vs(select.value)
+        await db_read_timekeeping(select.value)
         main.append(CRIAR__tabela_apontamento_horas(db_read_response_timekeeping))
     }
 }

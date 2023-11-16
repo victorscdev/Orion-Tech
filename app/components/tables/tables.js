@@ -114,3 +114,36 @@ export function CRIAR__tabela_apontamento_horas(array) {
 
     return table
 }
+
+export function CRIAR__tabela_calculo_de_folha(array) {
+    const table = document.createElement('table')
+    table.classList.add("table", "table-striped", "table-hover")
+    table.id = "table_calculo_de_floha"
+
+    table.innerHTML = `
+        <thead>
+            <tr class="table-dark">
+                <th>Valor Hora(R$)</th>
+                <th>Qtds de Horas Trabalhadas</th>
+                <th>Salario Bruto(R$)</th>
+                <th>Desconto do INSS(R$)</th>
+                <th>Desconto do IR(R$)</th>
+                <th>Salario Liquido(R$)</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${array.map((calculo_folha) => `
+            <tr class="table-secondary">
+                <td>${FORMATAR__numero_em_dinheiro(calculo_folha.valor_hora)}</td>
+                <td>${calculo_folha.quantidade_horas}h</td>
+                <td>${FORMATAR__numero_em_dinheiro(calculo_folha.salario_bruto)}</td>
+                <td>${FORMATAR__numero_em_dinheiro(calculo_folha.desconto_inss)}</td>
+                <td>${FORMATAR__numero_em_dinheiro(calculo_folha.desconto_ir)}</td>
+                <td>${FORMATAR__numero_em_dinheiro(calculo_folha.salario_liquido)}</td>
+            </tr>  
+            `).join('')}
+        </tbody>
+        `;
+
+    return table
+}

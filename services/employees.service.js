@@ -3,6 +3,7 @@ import {  get, post } from "../db/dataBase.js"
 export let db_create_response;
 export let db_create_user;
 export let db_read_response;
+export let db_read__by_id_response;
 
 export async function db_create(payload) {
     await post(`funcionarios`, `POST`, payload)
@@ -18,5 +19,12 @@ export async function db_read() {
     await get(`funcionarios`)
         .then((objectAssync) => objectAssync.json())
         .then((response) => db_read_response = response)
+        .catch((error) => console.error(error))
+}
+
+export async function db_read_by_id(id) {
+    await get(`funcionarios/${id}`)
+        .then((objectAssync) => objectAssync.json())
+        .then((response) => db_read__by_id_response = response)
         .catch((error) => console.error(error))
 }

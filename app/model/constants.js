@@ -3,7 +3,8 @@ import {
     LER__funcionarios,
     LER__home,
     LER__demonstratvo_de_ferias,
-    LER__apontamento_horas
+    LER__apontamento_horas,
+    LER__calculo_de_folha
  } from "./handlers.js"
 
 // import { Handlers } from "./handlers.js"
@@ -20,6 +21,11 @@ export const array_header = [
         id: "funcionarios",
         title: 'Funcionarios',
         handler: LER__funcionarios
+    },
+    {
+        id: "calculo_de_folha",
+        title: 'Calculo de Folha',
+        handler: LER__calculo_de_folha
     },
     {
         id: "apontamento_horas",

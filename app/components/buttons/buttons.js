@@ -27,3 +27,13 @@ export function HTML__botao_gerar_apontamento_horas(event) {
 
     return btn__gerar_apontamento
 }
+
+export function HTML__botao_gerar_calculo_de_folha(event) {
+    const btn__gerar_calculo_de_folha = document.createElement('button')
+    btn__gerar_calculo_de_folha.classList.add('btn_gerar_calculo_de_folha')
+    btn__gerar_calculo_de_folha.addEventListener('click', event)
+
+    btn__gerar_calculo_de_folha.innerText = 'Gerar Calculo de Folha';
+
+    return btn__gerar_calculo_de_folha
+}
