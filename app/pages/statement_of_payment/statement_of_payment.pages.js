@@ -28,6 +28,7 @@ async function EVENTO__gerar_demonstrativo_de_pagamento() {
     await db_read_timekeeping(select.value)
     FILTRAR__demontrativo_por_data_e_horas_trabalhadas(db_read_response_timekeeping, inputDate.value, select.value)
 
+    
     setTimeout(() => {
         if(demontrativo_de_pagamento.length === 0) {
             alert("Demonstrativo de Pagamento indisponivel")

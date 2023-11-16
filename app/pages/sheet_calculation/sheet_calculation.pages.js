@@ -28,8 +28,6 @@ async function EVENTO__gerar_calculo_de_folha() {
     await db_read_timekeeping(select.value)
     FILTRAR__apontamentos_por_data_e_horas_trabalhadas(db_read_response_timekeeping, inputDate.value, select.value)
 
-    console.log();
-
     setTimeout(() => {
         if(folha_de_pagamento.length === 0) {
             alert("folha de pagamento indisponivel")

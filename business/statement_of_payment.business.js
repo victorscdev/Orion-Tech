@@ -15,7 +15,6 @@ export async function FILTRAR__demontrativo_por_data_e_horas_trabalhadas(array, 
 
     if (count !== 0) {
         await db_read_by_id(employeeID)
-        console.log(db_read__by_id_response);
         demontrativo_de_pagamento.push(GERAR__demonstrativo(db_read__by_id_response.vlr_hora, count))
     }
 }
@@ -70,9 +69,8 @@ function GERAR__desconto_inss(salario) {
 
 function GERAR__desconto_inss_porcentagem(salario) {
     if (salario <= 1302) return "7.5%"
-    else if (salario >= 1302.01 && salario <= 2571.29) "9%"
-    else if (salario >= 2571.30 && salario <= 3856.94) "12%"
-    else if (salario >= 3856.95 && salario <= 7507.49) "14%"
+    else if (salario >= 1302.01 && salario <= 2571.29) return "9%"
+    else if (salario >= 2571.30 && salario <= 3856.94) return "12%"
     else return "14%"
 
 }
